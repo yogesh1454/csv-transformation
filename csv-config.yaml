@@ -1,0 +1,47 @@
+# Sample Network Configuration
+logConfig: logger.yaml
+networks:
+  nma:
+    name: nma
+    header: FALSE  
+    lineDelimiter: '/n'
+    fieldDelimiter: '|' 
+    outputFile: output.yaml               
+    spec:
+      - target: FirstName
+        source:                       
+        sourceIndex: 0                      
+        default:
+        validate:   
+      - target: Contact
+        source: 
+        sourceIndex: 2               
+        default:
+        validate: 
+      - target: Network
+        source: 
+        sourceIndex:                 
+        default: nma
+        validate:
+  gc:
+    name: gc
+    lineDelimiter: '/n'
+    fieldDelimiter: '|'
+    header: TRUE
+    outputFile: output-with-header.yaml
+    spec:
+      - target: FirstName
+        source: NAME                      
+        sourceIndex:                      
+        default:
+        validate:   
+      - target: Contact
+        source: CODE
+        sourceIndex:               
+        default:
+        validate: 
+      - target: Network
+        source: 
+        sourceIndex:                 
+        default: gc
+        validate: 

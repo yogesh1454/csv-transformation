@@ -1,0 +1,18 @@
+# Transformation Configuration
+logConfig: logger.yaml
+hello1:
+- network: nma
+  lineDelimiter: '/n'
+  fieldDelimiter: '|'
+  header: TRUE|FALSE                    # check if headers is present in the csv file or not 
+  spec:
+    - target: FirstName
+      source: name                      # If header row is present read value based on column name.
+      sourceIndex:                      
+      default:
+      validate: regular expression      # Validate the value read from the source row 
+    - target: Contact
+      source: 
+      sourceIndex: 0                    # if header row is not present read value based on column index.
+      default:
+      validate: regular expression      # Validate the value read from the source row
