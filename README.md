@@ -5,6 +5,7 @@ pip3 install -r requirements.txt -t .
 python3 csv-reader.py
 
 # Transformation Configuration
+```
 logConfig: logger.yaml                  # Log config file path
 networks:
 - name: nma                             # Name of the network device
@@ -22,3 +23,4 @@ networks:
       sourceIndex: 0                    # If header row is not present read value based on column index.
       default:                          # Default Value to be used
       validate: regular expression      # Validate the value read from the source row if any
+```
